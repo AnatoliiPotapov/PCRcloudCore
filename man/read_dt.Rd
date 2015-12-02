@@ -2,18 +2,19 @@
 % Please edit documentation in R/read_dt.R
 \name{read_dt}
 \alias{read_dt}
-\title{A Cat Function}
+\title{read_dt function}
 \usage{
 read_dt(file_path)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{file_path}{- расположение файла}
 }
 \description{
-This function allows you to express your love of cats.
+Функция парсит файлы приборов ДТ форматов .r48, .r96
 }
 \examples{
-cat_function()
+read_dt("../../pcr_read.r48")
 }
-\keyword{cats}
+\keyword{DT}
+\keyword{parse,}
 
