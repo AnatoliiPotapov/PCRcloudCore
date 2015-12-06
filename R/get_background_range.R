@@ -5,9 +5,9 @@ example_settings <- list(
   algorithm = "smart"
 )
 
-get_background_range <- function(curve, st = example_settings) {
+get_background_range <- function(curve, exp_start, st = example_settings) {
 
-  start <- get_start_of_exponential_growth(curve)
+  start <- exp_start
   if (is.null(start)) return(NULL)
 
   else {
@@ -17,7 +17,7 @@ get_background_range <- function(curve, st = example_settings) {
 
     for (j in (st$min_exp):(start-1)) {
 
-      fitt <- fit(curve, c(start:(start-j)))
+      fitt <- fit_linear_model(curve, c(start:(start-j)))
       r.squared <- fitt$r.squared
 
       if ((r.squared > r.squared_value) ) {
