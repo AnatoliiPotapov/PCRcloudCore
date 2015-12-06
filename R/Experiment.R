@@ -14,8 +14,8 @@ Experiment <- R6Class("Experiment",
                         preprocess = function( parameters = DEFAULT_PREPROCESSING ) {
                           private$cpp_curves <- lapply(private$raw_curves, function(curve) { preprocess_curve(curve)$preprocessed_curve })
                         },
-                        
-                        
+
+
 
                         plot = function(mode = "RAW", indexes = NULL, name = "PCR curves") {
                           if (is.null(indexes)) { indexes = c(1:480)}
@@ -44,7 +44,7 @@ Experiment <- R6Class("Experiment",
                       private = list(
                         parsed_file = list(),
                         raw_curves = list(),
-                        cpp_curves = list(),
-                        
+                        cpp_curves = list()
+
                       )
 )
