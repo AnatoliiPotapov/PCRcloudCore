@@ -12,13 +12,13 @@ Experiment <- R6Class("Experiment",
 
                         preprocess = function( parameters = DEFAULT_PREPROCESSING ) {
                           pre_cpp <- lapply(private$raw_curves, function(curve) {
-                            amptester(curve)
+                            if (sum(curve == 1) == 0) { amptester(curve) } else { curve }
                           })
                           private$cpp_curves <- lapply(pre_cpp, function(curve) {
-                            preprocess_curve(curve)
+                            if (sum(curve == 1) == 0) { preprocess_curve(curve) } else { curve }
                           })
                         },
-
+                        
                         plot = function(mode = "RAW", indexes = NULL, name = "PCR curves") {
                           if (is.null(indexes)) { indexes = c(1:48)}
 
@@ -28,9 +28,21 @@ Experiment <- R6Class("Experiment",
                           if (mode == "CPP") {
                             plot_curves(asub(private$cpp_curves, indexes))
                           }
+                        },
+                        
+                        get_file = function() {
+                          private$parsed_file
+                        },
+                        
+                        get_raw_curves = function() {
+                          private$raw_curves
+                        },
+                        
+                        get_cpp_curves = function() {
+                          private$cpp_curves
                         }
-
                       ),
+                      
                       private = list(
                         parsed_file = list(),
                         raw_curves = list(),

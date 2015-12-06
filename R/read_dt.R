@@ -25,6 +25,7 @@ read_dt<-function(file_path){
   output$program = get_program(all_data)
   output$optic = get_optic_curves(all_data, num)
   output$cycle_count = dim(output$optic$FAM_1)[1]
+  output$samples_count = dim(output$optic$FAM_1)[2]
   output$labels = get_sample_labels(all_data, num)
   return (output)
 }
