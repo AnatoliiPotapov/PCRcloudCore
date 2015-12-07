@@ -9,3 +9,4 @@ License: proprientary soft
 LazyData: true
 RoxygenNote: 5.0.1.9000
 Suggests: testthat
+Encoding: UTF-8
