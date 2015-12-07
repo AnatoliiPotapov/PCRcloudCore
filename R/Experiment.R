@@ -15,7 +15,9 @@ Experiment <- R6Class("Experiment",
                           private$cpp_curves <- lapply(private$raw_curves, function(curve) { preprocess_curve(curve)$preprocessed_curve })
                         },
 
+                        fit = function() {
 
+                        },
 
                         plot = function(mode = "RAW", indexes = NULL, name = "PCR curves") {
                           if (is.null(indexes)) { indexes = c(1:480)}
