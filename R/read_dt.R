@@ -1,11 +1,3 @@
-#' read_dt function
-#'
-#' Функция парсит файлы приборов ДТ форматов .r48, .r96
-#' @param file_path - расположение файла
-#' @keywords parse, DT
-#' @export
-#' @examples
-#' read_dt("../../pcr_read.r48")
 
 
 # library(stringr)
