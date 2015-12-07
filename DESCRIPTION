@@ -5,7 +5,7 @@ Authors@R: person("Anatoly", "Potapov", email = "anatolii.s.potapov@gmail.com", 
 Description: This package does magic!
 Depends:
     R (>= 3.2.2), R6, chipPCR, abind, ggplot2, qpcR, stringr
-License: proprientary soft
+License: MIT
 LazyData: true
 RoxygenNote: 5.0.1.9000
 Suggests: testthat
