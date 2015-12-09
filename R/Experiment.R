@@ -40,6 +40,7 @@ Experiment <- R6Class("Experiment",
                           if (is.null(indexes)) { indexes = c(1:480)}
 
                           if (mode == "RAW") {
+                            print("*")
                             plot_curves(asub(private$raw_curves, indexes))
                           } else
                           if (mode == "CPP") {
